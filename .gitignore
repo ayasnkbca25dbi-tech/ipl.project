@@ -1,0 +1,11 @@
+data/Rowdata/
+data/processed data/
+*.db
+*.csv
+.venv/
+venv/
+__pyscache__/
+*pyc
+.ipynb_checkpoints/
+.DS_store
+Thumbs.db
