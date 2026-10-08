@@ -24,7 +24,13 @@ SELECT d.*,                  -- keep every original column
 FROM   deliveries d 
 WHERE  d.is_super_over = 0;  -- drop the 175 tie-breaker balls
 
------------------------------------------------------------------------------------------------------
+
+
+
+--_________________________________________________________________________________________________________________________________________________
+
+
+
 DROP VIEW IF EXISTS v_innings; 
 CREATE VIEW v_innings AS 
 SELECT match_id,                           -- which match 
@@ -37,6 +43,13 @@ SELECT match_id,                           -- which match
 FROM   v_ball                              -- built in 3.6, so the filter 
 WHERE  innings IN (1,2)                    -- ignore super-over innings 3 
 GROUP  BY match_id, innings;               -- one row per team per match
+
+
+
+
+--_______________________________________________________________________________________________________________________________________________
+
+
 DROP VIEW IF EXISTS v_match_totals; 
 CREATE VIEW v_match_totals AS 
 SELECT m.*,                                    -- everything about the ma 
